@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React, { useState } from "react";
 
-import Home from './Components/Home';
-import Matches from './Components/Matches';
-import Profile from './Components/Profile';
+import './App.css';
+import Home from './Components/Home/Home';
+import Register from './Components/Register/Register';
 
 function App() {
+  const[user, setUser] = useState({
+    loggedIn: false,
+    username: null,
+    email:null,
+    age:null,
+    distance:null,
+    recent:null,
+    gender:null,
+    tastes:[],
+    localitzation:{lat:null, long:null}
+  });
   return (
-    <Router>
-      <Switch>
-        <Route path="/"><Home/></Route>
-        <Route path="/:id"><Profile/></Route>
-        <Route path="/matches"><Matches/></Route>
-      </Switch>
-    </Router>
+      <div>
+        {user.loggedIn ?  <Home user={user} setUser={setUser}/>: <Register setUser={setUser} />}
+      </div>
   );
 }
 

@@ -9,13 +9,13 @@ const Wrapper = styled.div`
   height:10vw;
 `;
 
-const Profile = () => {
+const Register = () => {
 
   return (
     <Wrapper >
-        Profile
+        Register
     </Wrapper>
   );
 };
 
-export default Profile;
+export default Register;
