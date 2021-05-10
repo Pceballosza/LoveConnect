@@ -2,17 +2,22 @@ import React from "react"
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  background:black;
-  color:white;
-  border-radius:5px;
-  width:10vw;
-  height:10vw;
-`;
+  ${props=>`
+    font-size: 2.5vh;
+    background: ${props.key? "white" : props.key}
+    height: 100%;
+    width: 100%;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    border-radius: 1vh;
+    ${props?.styles}
+`}`
 
 const Home = () => {
 
   return (
-    <Wrapper >
+    <Wrapper styles={"border-radius:25vh;"}>
         Home
     </Wrapper>
   );
