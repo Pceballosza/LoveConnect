@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 const Home = () => {
 
   return (
-    <Wrapper styles={"border-radius:25vh;"}>
+    <Wrapper styles={"border-radius:25vh;"} key={"cosas"}>
         Home
     </Wrapper>
   );
